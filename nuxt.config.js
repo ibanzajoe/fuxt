@@ -222,8 +222,32 @@ export default {
      */
     storybook: {
         stories: ["~/stories/**/*.stories.js"],
+        addons: [
+            '@storybook/addon-backgrounds'
+        ],
         parameters: {
             layout: "fullscreen",
+            backgrounds: {
+                default: 'default',
+                values: [
+                    {
+                        name: 'default',
+                        value: '#ffffff'
+                    },
+                    {
+                        name: 'light',
+                        value: '#f5f5f5'
+                    },
+                    {
+                        name: 'dark',
+                        value: '#808080'
+                    },
+                    {
+                        name: 'black',
+                        value: '#000000'
+                    }
+                ]
+            }
         },
         webpackFinal(config, { configDir }) {
             // Allow webpack to auto-load .gql and .svg files
